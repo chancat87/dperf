@@ -270,11 +270,6 @@ static int config_parse_keepalive_request_interval(struct config *cfg, char *str
             printf("Error: keepalive request interval must be a multiple of 2us\n");
             return -1;
         }
-
-        if ((val >= 1000) && ((val % 1000) != 0)) {
-            printf("Error: microseconds can only be used if the interval is less than 1 millisecond\n");
-            return -1;
-        }
     }
 
     val *= rate;
